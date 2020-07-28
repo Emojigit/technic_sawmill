@@ -10,9 +10,9 @@ function technic_sawmill.register_sawmill(data)
 end
 
 
-minetest.register_alias("sawmill", "technic:lv_sawmill")
+minetest.register_alias("sawmill", "technic_sawmill:lv_sawmill")
 minetest.register_craft({
-	output = 'technic:lv_sawmill',
+	output = 'technic_sawmill:lv_sawmill',
 	recipe = {
 		{'technic:stainless_steel_ingot', 'technic:diamond_drill_head', 'technic:stainless_steel_ingot'},
 		{'technic:fine_copper_wire',      'technic:machine_casing',     'technic:motor'},
@@ -21,6 +21,7 @@ minetest.register_craft({
 })
 
 technic_sawmill.register_sawmill({tier="LV", demand={200}, speed=1, 
+	modname = "technic_sawmill",
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -34,5 +35,6 @@ technic_sawmill.register_sawmill({tier="LV", demand={200}, speed=1,
 			{-1/2, -1/2, -1/2, 1/2, 7/32, 1/2},
 		},
 	}, 
-	tiles = {nil,nil,nil,nil,"_back",nil}})
+	tiles = {nil,nil,nil,nil,"_back",nil}
+})
 
